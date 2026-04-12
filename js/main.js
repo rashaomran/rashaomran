@@ -77,3 +77,63 @@
     { passive: true }
   );
 })();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("typewriter");
+
+  if (!el) {
+    console.error("Typewriter element not found");
+    return;
+  }
+
+  const lines = [
+    "I'm Rasha Omran ...",
+    "I build Flutter platforms ..",
+    "I design AI-driven products ...",
+    "Systems that survive enterprise reality."
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const current = lines[lineIndex];
+
+    if (!isDeleting) {
+      el.innerHTML = current.substring(0, charIndex);
+      charIndex++;
+    } else {
+      el.innerHTML = current.substring(0, charIndex);
+      charIndex--;
+    }
+
+    let speed = isDeleting ? 35 : 65;
+    speed += Math.random() * 25;
+
+    // finished typing
+    if (!isDeleting && charIndex > current.length) {
+      isDeleting = true;
+      speed = 1200;
+    }
+
+    // finished deleting
+    if (isDeleting && charIndex < 0) {
+      isDeleting = false;
+      lineIndex = (lineIndex + 1) % lines.length;
+      speed = 400;
+    }
+
+    setTimeout(type, speed);
+  }
+
+  type();
+});
