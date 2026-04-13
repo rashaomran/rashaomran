@@ -94,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const lines = [
-    "I'm Rasha Omran ...",
-    "I build Flutter platforms ..",
-    "I design AI-driven products ...",
-    "Systems that survive enterprise reality."
-  ];
+ const lines = [
+  "Build scalable Flutter platforms.",
+  "Launch AI-powered products.",
+  "Turn ideas into production systems.",
+  "Scale apps for real-world users."
+];
 
   let lineIndex = 0;
   let charIndex = 0;
