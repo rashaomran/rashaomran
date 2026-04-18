@@ -1078,7 +1078,7 @@ border-color: hsl(182 60% 37% / 0.25);
 
 .impact-card .stat-line em {
   font-style: normal;
-  background: var(--gradient);
+  background: var(--accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1819,7 +1819,7 @@ border-color: hsl(182 60% 37% / 0.25);
 .trust-card .big {
   font-size: 3rem;
   font-weight: 800;
-  background: var(--gradient);
+  background: var(--accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
